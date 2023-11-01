@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CBA_app.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CBA_app"
+    xmlns:dashboardPages="clr-namespace:CBA_app.Views.Dashboard"
+    xmlns:templates="clr-namespace:CBA_app.Templates"
+    xmlns:models="clr-namespace:CBA_app.Models"
+    Shell.TabBarIsVisible="False"
+    xmlns:startupPages="clr-namespace:CBA_app.Views.Login">
+
+  
+
+    <ShellContent FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate startupPages:LoadingPage}" Route="LoadingPage" />
+
+    <ShellContent
+        Title="Login Page" FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate startupPages:LoginPage}"
+        Route="LoginPage" />
+    <Shell.FlyoutHeader>
+        <templates:FlyoutHeader />
+    </Shell.FlyoutHeader>
+    <Shell.FlyoutFooter>
+        <templates:FlyoutFooter />
+    </Shell.FlyoutFooter>
+    
+
+
+</Shell>

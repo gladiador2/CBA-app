@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CBA_app.Views.Dashboard.DashboardPage"
+             Title="Dashboard">
+    
+    <ScrollView>
+        
+        <VerticalStackLayout
+            Spacing="15" 
+            Padding="10,0" 
+            VerticalOptions="Start">
+            <ActivityIndicator x:Name="loading" HeightRequest="30" Color="Blue" IsRunning="True" 
+                               IsVisible="false"/>
+            <StackLayout x:Name="ContenedorPrincipal" Orientation="Vertical"  Spacing="5" IsVisible="false" >
+                
+                <Frame HeightRequest="150"  Padding="0" HasShadow="True"   HorizontalOptions="FillAndExpand" ZIndex="1" Margin="0,15,0,0" >
+                    <VerticalStackLayout
+                        Spacing="02" 
+                        Padding="0" 
+                        VerticalOptions="Start">
+                        <StackLayout Padding="0"   BackgroundColor="#D2D2D2" Margin="1,0"   >
+                            <Label Text="Stock contenedores del día"  VerticalOptions="Center" HorizontalOptions="Center" FontSize="Subtitle" FontAttributes="Bold" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5" BackgroundColor="#F3F3F3" Margin="1,0" >
+                            <Label Text="TIPO "  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" FontAttributes="Bold"/>
+                            <Label Text="|"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                            <Label Text="CANTIDAD"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" FontAttributes="Bold"/>
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0" Spacing="5">
+                            <Label Text="Importación "  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0" x:Name="lblImportacion" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="Exportación "  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0" x:Name="lblExportacion" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="Vacíos"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0" x:Name="lblVacio" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="Total"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" FontAttributes="Bold"/>
+
+                            <Label Text="0" x:Name="lbltotal" VerticalOptions="Center"  HorizontalOptions="EndAndExpand" Margin="0,0,5,0" FontAttributes="Bold" />
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame HeightRequest="193"  Padding="0" HasShadow="True"   HorizontalOptions="FillAndExpand" ZIndex="1" Margin="0,15,0,0" >
+                    <VerticalStackLayout
+                        Spacing="02" 
+                        Padding="0" 
+                        VerticalOptions="Start">
+                        <StackLayout Padding="0"   BackgroundColor="#D2D2D2" Margin="1,0"   >
+                            <Label Text="G.I.O. del día"  VerticalOptions="Center" HorizontalOptions="Center" FontSize="Subtitle" FontAttributes="Bold" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5" BackgroundColor="#F3F3F3" Margin="1,0" >
+                            <Label Text="TIPO "  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" FontAttributes="Bold"/>
+                            <Label Text="|"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                            <Label Text="CANTIDAD"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" FontAttributes="Bold"/>
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0" Spacing="5">
+                            <Label Text="GOF"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0"  x:Name="txtgof" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="GOE"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0"  x:Name="lblgoe"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="GIF"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0"  x:Name="lblGif"   VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="GOF"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0"  x:Name="lblgof"   VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="GIE"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0"  x:Name="lblgie"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="Total"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" FontAttributes="Bold" />
+
+                            <Label Text="0"  x:Name="lblGIOTotal"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" FontAttributes="Bold" />
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame HeightRequest="125"  Padding="0" HasShadow="True"   HorizontalOptions="FillAndExpand" ZIndex="1" Margin="0,15,0,0" >
+                    <VerticalStackLayout
+                        Spacing="02" 
+                        Padding="0" 
+                        VerticalOptions="Start">
+                        <StackLayout Padding="0"   BackgroundColor="#D2D2D2" Margin="1,0"   >
+                            <Label Text="Facturación del día. Cotización: 7476.52"  VerticalOptions="Center" HorizontalOptions="Center" FontSize="Subtitle" FontAttributes="Bold" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5" BackgroundColor="#F3F3F3" Margin="1,0" >
+                            <Label Text="TIPO "  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" FontAttributes="Bold"/>
+                            <Label Text="GUARANIES"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  FontAttributes="Bold" />
+                            <Label Text="DOLARES"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" FontAttributes="Bold"/>
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0" Spacing="5">
+                            <Label Text="Contado"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" />
+                            <Label Text="58.000"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                            <Label Text="1000"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" />
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="Credito"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" />
+                            <Label Text="58.000"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                            <Label Text="1000"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" />
+                            
+                        </StackLayout>
+                      
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="Total"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" FontAttributes="Bold"/>
+
+                            <Label Text="0"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame HeightRequest="170"  Padding="0" HasShadow="True"   HorizontalOptions="FillAndExpand" ZIndex="1" Margin="0,15,0,0" >
+                    <VerticalStackLayout
+                        Spacing="02" 
+                        Padding="0" 
+                        VerticalOptions="Start">
+                        <StackLayout Padding="0"   BackgroundColor="#D2D2D2" Margin="1,0"   >
+                            <Label Text="Muelle del día"  VerticalOptions="Center" HorizontalOptions="Center" FontSize="Subtitle" FontAttributes="Bold" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5" BackgroundColor="#F3F3F3" Margin="1,0" >
+                            <Label Text="TIPO "  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" FontAttributes="Bold"/>
+                            <Label Text="|"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                            <Label Text="CANTIDAD"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" FontAttributes="Bold"/>
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0" Spacing="5">
+                            <Label Text="Emb. Operadas"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="Descargados Full - Imp."  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="Cargados Full - Exp"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="Vacíos"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0"/>
+
+                            <Label Text="0"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
+                            <Label Text="Total contenedores operados"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" FontAttributes="Bold" />
+
+                            <Label Text="0"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" FontAttributes="Bold" />
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </StackLayout>
+
+
+        </VerticalStackLayout>
+        
+    </ScrollView>
+
+</ContentPage>

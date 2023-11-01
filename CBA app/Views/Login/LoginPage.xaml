@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CBA_app.Views.Login.LoginPage"
+             Shell.NavBarIsVisible="False"
+             xmlns:handlers="clr-namespace:CBA_app.Handlers"
+             Title="LoginPage">
+    <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+        <Image Source="company_logo.jpg" HeightRequest="150" WidthRequest="150"/>
+
+
+        <VerticalStackLayout Spacing="5">
+            <Label Text="Bienvenido" FontSize="28" TextColor="Gray" HorizontalTextAlignment="Center" />
+           
+        </VerticalStackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <handlers:BorderlessEntry  x:Name="txtUsuario" Text="{Binding Email}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Usuario" Keyboard="Email" ToolTipProperties.Text="Ingrese su usuario" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="lock.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <handlers:BorderlessEntry x:Name="txtContraseña" Text="{Binding Password}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Contraseña" IsPassword="True" ToolTipProperties.Text="Ingrese su contraseña"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Frame HeightRequest="45" Margin="50,0,0,0" Padding="0" BorderColor="White"  HorizontalOptions="Center">
+                <Label Text="Recordar credenciales" TextColor="Gray" VerticalOptions="Center"/>
+
+            </Frame>
+            <Switch IsToggled="false"  />
+
+        </StackLayout>
+        <Button Text="Ingresar" WidthRequest="150" CornerRadius="20" HorizontalOptions="Center"  x:Name="btnIngresar"  Clicked="OnIngresar" ToolTipProperties.Text="Iniciar Sessión"  />
+        
+       
+        <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center">
+            <Label Text="©CBA SA - 2023" TextColor="Gray" />
+            
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
