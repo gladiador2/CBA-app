@@ -2,8 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CBA_app.Views.Dashboard.DashboardPage"
+              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              Title="Dashboard">
     
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#111111" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
     <ScrollView>
         
         <VerticalStackLayout
@@ -104,7 +108,7 @@
                         Padding="0" 
                         VerticalOptions="Start">
                         <StackLayout Padding="0"   BackgroundColor="#D2D2D2" Margin="1,0"   >
-                            <Label Text="Facturación del día. Cotización: 7476.52"  VerticalOptions="Center" HorizontalOptions="Center" FontSize="Subtitle" FontAttributes="Bold" />
+                            <Label Text="Facturación del día. Cotización: 7476.52"  x:Name="lblCoticacion"  VerticalOptions="Center" HorizontalOptions="Center" FontSize="Subtitle" FontAttributes="Bold" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5" BackgroundColor="#F3F3F3" Margin="1,0" >
                             <Label Text="TIPO "  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" FontAttributes="Bold"/>
@@ -114,21 +118,21 @@
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="0" Spacing="5">
                             <Label Text="Contado"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" />
-                            <Label Text="58.000"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                            <Label Text="1000"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" />
+                            <Label Text="0" x:Name="lblContadoGuaranies"   VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                            <Label Text="0" x:Name="lblContadoDolares"   VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" />
 
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
                             <Label Text="Credito"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" />
-                            <Label Text="58.000"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-                            <Label Text="1000"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" />
-                            
+                            <Label Text="0" x:Name="lblCreditoGuaranies"   VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                            <Label Text="0" x:Name="lblCreditoDolares"   VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" />
+
                         </StackLayout>
                       
                         <StackLayout Orientation="Horizontal" Padding="0"  Spacing="5">
                             <Label Text="Total"  VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5,0,0,0" FontAttributes="Bold"/>
 
-                            <Label Text="0"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" FontAttributes="Bold"/>
+                            <Label Text="0" x:Name="lblTotalDolares" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,5,0" FontAttributes="Bold"/>
                         </StackLayout>
                     </VerticalStackLayout>
                 </Frame>

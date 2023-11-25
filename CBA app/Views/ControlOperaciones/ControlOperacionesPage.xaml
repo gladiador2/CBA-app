@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CBA_app.Views.ControlOperaciones.ControlOperacionesPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Shell.NavBarIsVisible="False"
+             Title="Control de operaciones">
+   
+
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#111111" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
+    <Grid>
+        <Grid VerticalOptions="StartAndExpand" BackgroundColor="{StaticResource Primary}" HeightRequest="56">
+            <StackLayout Orientation="Horizontal">
+                <ImageButton
+                    HorizontalOptions="Start"
+                     Source="menu.svg"
+                     WidthRequest="30"
+                     HeightRequest="30"
+                     IsEnabled="True" 
+                    x:Name="btnAtras"
+                    Margin="20,0,0,0"
+                     />
+                <Label x:Name="lblTitulo" Margin="20,0,0,0" Text="Control de operaciones" HorizontalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold" TextColor="White" VerticalOptions="Center"/>
+                <Frame HeightRequest="41" Margin="10,0,-15,1" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand" CornerRadius="100" IsVisible="false" x:Name="FrameSeach">
+                    <SearchBar
+                   
+                   CancelButtonColor="Red"
+                    x:Name="searchOperaciones"
+                   CharacterSpacing="1"
+                   CursorPosition="1"
+                   FontAttributes="Italic"
+                   FontFamily="OpenSansRegular"
+                   Placeholder="Buscar.."
+                   PlaceholderColor="Gray"
+                   SelectionLength="10"
+                   TextColor="Black"
+                   VerticalTextAlignment="Center"
+                   Margin="0,0,25,0"
+                  />
+                </Frame>
+                
+             
+                <Frame  HasShadow="True" BorderColor="White" HeightRequest="41" WidthRequest="41"  Margin="-25,0,10,1" CornerRadius="100" IsVisible="false" x:Name="FrameBtnFiltros">
+                    
+                    <ImageButton
+                    HorizontalOptions="End"
+                     Source="filtro_gris.svg"
+                     WidthRequest="30"
+                     HeightRequest="30"
+                     IsEnabled="True"
+                    Margin="-15,0,-10,0"
+                        Clicked="ImageButton_Clicked"
+                        x:Name="btnFiltros"
+                     />
+                </Frame>
+                <ImageButton
+                    HorizontalOptions="End"
+                     Source="buscarblanco.svg"
+                     WidthRequest="30"
+                     HeightRequest="30"
+                     IsEnabled="True"
+                     x:Name="btnBuscar"
+                     Clicked="btnBuscar_Clicked"
+                     />
+                <ImageButton
+                    HorizontalOptions="End"
+                     Source="closeblanco.svg"
+                     WidthRequest="30"
+                     HeightRequest="30"
+                     IsEnabled="True"
+                     x:Name="btnCerrarSearch"
+                     IsVisible="false"
+                     Clicked="btnCerrarSearch_Clicked"
+                     />
+                <ImageButton
+                    HorizontalOptions="End"
+                     Source="nuevo_blanco.svg"
+                     WidthRequest="30"
+                     HeightRequest="30"
+                     IsEnabled="True"
+                    Margin="5"
+                        Clicked="btnNuevo_Clicked"
+                        x:Name="btnNuevo"
+                     />
+            </StackLayout>
+            <!--SearchBar>TextChanged="SearchBar_TextChanged" -->
+            <!--SearchButtonPressed="SearchBar_SearchButtonPressed"-->
+           
+
+
+        </Grid>
+       
+        
+    </Grid>
+
+</ContentPage>

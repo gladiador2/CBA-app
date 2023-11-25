@@ -3,6 +3,8 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using Newtonsoft.Json;
 
+using Newtonsoft.Json.Linq;
+
 using CBA_app.Models;
 using CBA_app.Views.Dashboard;
 using System;
@@ -116,6 +118,16 @@ public partial class LoginPage : ContentPage
                 }
 
                 string userDetailStr = JsonConvert.SerializeObject(userDetails);
+                // Convertir el JSON en un objeto JObject
+                JObject jObject = JObject.Parse(userDetailStr);
+                jObject.Remove("roles");
+
+#if WINDOWS
+userDetailStr = jObject.ToString();
+
+// Eliminar un nodo específico
+
+#endif
                 Preferences.Set(nameof(App.UserDetails
                     ), userDetailStr);
                 App.UserDetails = userDetails;

@@ -3,6 +3,7 @@ using CBA_app.ViewModels.Dashboard;
 using CBA_app.ViewModels.Startup;
 using CBA_app.Views.Dashboard;
 using CBA_app.Views.Login;
+using CommunityToolkit.Maui;
 
 namespace CBA_app;
 
@@ -13,6 +14,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

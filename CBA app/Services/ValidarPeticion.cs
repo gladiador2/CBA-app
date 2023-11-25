@@ -24,10 +24,6 @@ namespace CBA_app.Services
         {
             try
             {
-                
-
-                
-
                 // Crear el contenido de la solicitud con el tipo de datos adecuado
                 var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 

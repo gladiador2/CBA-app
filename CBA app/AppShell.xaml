@@ -8,9 +8,12 @@
     xmlns:templates="clr-namespace:CBA_app.Templates"
     xmlns:models="clr-namespace:CBA_app.Models"
     Shell.TabBarIsVisible="False"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:startupPages="clr-namespace:CBA_app.Views.Login">
 
-  
+    <Shell.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="Black" StatusBarStyle="LightContent" />
+    </Shell.Behaviors>
 
     <ShellContent FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
         ContentTemplate="{DataTemplate startupPages:LoadingPage}" Route="LoadingPage" />
